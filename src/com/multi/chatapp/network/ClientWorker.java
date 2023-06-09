@@ -1,6 +1,7 @@
 package com.multi.chatapp.network;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
@@ -20,11 +21,11 @@ public class ClientWorker extends Thread{
 	@Override
 	public void run() {
 		BufferedReader br= new BufferedReader(new InputStreamReader(in));
-		String line;
+		String line ;
 		try{
 			
 		  while(true) {
-		 	line = br.readLine();
+			  line = br.readLine();
 		 	System.out.println("Line Read at Client Side" +line);
 		 	textArea.setText(textArea.getText()+ line + "\n");// includes the line and previous text in text area
 		     }
